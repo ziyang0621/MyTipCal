@@ -35,7 +35,7 @@ class ViewController: UIViewController {
         var defaults = NSUserDefaults.standardUserDefaults()
         var intValue = defaults.integerForKey("selected_default_tip_segment")
 
-        updateUITranparency(0)
+        updateUITransparency(0)
 
         NSNotificationCenter.defaultCenter().removeObserver(self)
         let notificationCenter = NSNotificationCenter.defaultCenter()
@@ -49,7 +49,7 @@ class ViewController: UIViewController {
     func resetBillAmount() {
         if (!billField.text.isEmpty) {
             billField.text = ""
-            updateUITranparency(0)
+            updateUITransparency(0)
         }
     }
 
@@ -65,7 +65,7 @@ class ViewController: UIViewController {
         totalLabel.text = String(format: "$%.2f", total)
     }
 
-    func updateUITranparency(alpha: Int) {
+    func updateUITransparency(alpha: Int) {
         if (alpha == 1) {
             UIView.animateWithDuration(1.0, animations: {
                 self.tipDisplayLabel.alpha = 1
@@ -131,10 +131,10 @@ class ViewController: UIViewController {
         updateLabels()
 
         if (billField.text.isEmpty) {
-            updateUITranparency(0)
+            updateUITransparency(0)
         }
         else {
-            updateUITranparency(1)
+            updateUITransparency(1)
         }
 
     }
