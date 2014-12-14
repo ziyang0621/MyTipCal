@@ -44,6 +44,8 @@ class ViewController: UIViewController {
             name:"resetBillAmount",
             object: nil
         )
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Settings", style: UIBarButtonItemStyle.Plain, target: self, action: "onSettings");
     }
 
     func resetBillAmount() {
@@ -117,14 +119,16 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
-        if (segue.identifier == "settingsSegue") {
-            let vc = segue.destinationViewController as SettingsViewController
-            vc.segmentIndex = tipControl.selectedSegmentIndex
-            vc.themeIndex = themeIndex
-        }
+    
+    func onSettings() {
+        var storyBoard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+        var settingsVC = storyBoard.instantiateViewControllerWithIdentifier("SettingsViewController") as? SettingsViewController
+        settingsVC!.segmentIndex = tipControl.selectedSegmentIndex;
+        settingsVC!.themeIndex = themeIndex;
+        let nav = UINavigationController(rootViewController: settingsVC!);
+        presentViewController(nav, animated: true, completion: nil)
     }
+
 
     @IBAction func onEditingChanged(sender: AnyObject) {
 
