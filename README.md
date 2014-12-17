@@ -2,12 +2,13 @@ MyTipCal
 ========
 Simple Swift Tip Calculator Application.
 
-Features:
+Completed user stories:
 
-1. Able to set default tip percentage
+ * [x] Able to set default tip percentage
+ * [x] Able to set background theme
+ * [x] Bill amount will set to blank automatically, if the application is in background more than 10 minutes
+ * [x] Labels and segment control will be disappeared, if the bill amount is blank
 
-2. Able to set background theme
+![Video Walkthrough](MyTipCal.gif)
 
-3. Bill amount will set to blank automatically, if the application is in background more than 10 minutes
-
-4. Labels and segment control will be disappeared, if the bill amount is blank
+GIF created with [LiceCap](http://www.cockos.com/licecap/).
